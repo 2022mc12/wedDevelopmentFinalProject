@@ -1,0 +1,14 @@
+<h1>Create An Account</h1>
+
+{{#if error}}
+Account Creation Failed, Please Try Again
+{{/if}}
+
+<form method = "POST" action = "/createUser">
+
+    Username: <input type = "text" name = "username">
+
+    Password: <input type = "text" name = "password">
+
+    <input type = "submit" value = "Create User" name= "submitButton">
+</form>

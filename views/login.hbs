@@ -1,0 +1,13 @@
+<h1>Login</h1>
+
+{{#if error}}
+Login Failed, Please Try Again
+{{/if}}
+
+<form method = "POST" action ="/login">
+    Username: <input type = "text" name = "username">
+    Password: <input type = "text" name = "password">
+    <input type = "submit" value = "Login"  name= "submitButton">
+</form>
+
+<a href="/createUser" name = "LinkToCreateUser">Create User</a>

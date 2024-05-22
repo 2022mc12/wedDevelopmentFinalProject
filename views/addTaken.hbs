@@ -1,0 +1,24 @@
+<h1>Add Courses Taken </h1>
+
+<ul>
+    {{#each coursesTaken}}
+        <li>{{this}}</li>
+    {{/each}}
+</ul>
+
+<form method="POST" action = "/addTaken">
+    <input type = "text" name= "addCourse" placeholder="Enter new course...">
+    <input type = "submit" value = "Enter" name= "submitButton">
+</form>
+
+<br>
+<a href = "/my-tracker" name= "LinkToMyTracker">View Tracker</a>
+<a href = "/deleteTaken" name = "LinkToDeleteTaken">Delete Courses</a>
+
+<br>
+List of possible course names that you can enter(Please enter the name in the same format as listed below):
+<ul>
+    {{#each courseNames}}
+        <li>{{this}}</li>
+    {{/each}}
+</ul>

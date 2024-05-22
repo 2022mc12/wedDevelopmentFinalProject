@@ -1,0 +1,17 @@
+table{
+    border: black 2px solid;
+    border-collapse: collapse;
+}
+th, td{
+    border:black 2px solid;
+}
+
+.taken{
+    color: green;
+}
+.canBeTaken{
+    color: blue;
+}
+.canNotTake{
+    color:red;
+}

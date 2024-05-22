@@ -1,0 +1,46 @@
+<h1>Program: {{programName}}</h1>
+<form method = "POST" action = "/my-tracker">
+    <select name = "program">
+        {{#if default}}
+        <option selected >Computer Science Major</option>
+        <option>Computer Science Minor</option>
+        {{else}}
+        <option>Computer Science Major</option>
+        <option selected>Computer Science Minor</option>
+        {{/if}}
+    </select>
+    <input type="submit">
+</form>
+
+<h3>Key:</h3>
+<h3 class=taken>Taken</h3>
+<h3 class=canBeTaken>Can Be Taken</h3>
+<h3 class=canNotTake>Cannot Take</h3>
+
+
+<table>
+    <tr>
+        <th>Required Course</th>
+        <th>Prerequisites</th>
+    </tr>
+    {{#each courseRequired}}
+        <tr {{#if this.taken}}class=taken{{/if}}{{#if this.canBeTaken}}class=canBeTaken{{/if}}{{#if this.canNotTake}}class=canNotTake{{/if}}>
+            <td>{{this.name}}</td>
+            <td>{{this.prerequisites}}</td>
+        </tr>
+    {{/each}}
+</table>
+
+<br><br> 
+
+* Note that for the CS Major Electives(5), you will need to take five CSCI-UA.4xx level electives.
+<br>* Note that for the CS Minor Required Elective, you will need to take a CSCI-UA.4xx level elective, CSCI-UA.202, or CSCI-UA.310
+<br> * Note that for the elective "courses", there are no prerequisites listed and it will only change from red to green if the requirements are met (it will never be blue).
+
+<br><br>
+
+<a href = "/addTaken" name = "LinkToAddTaken">Add Courses</a>
+<a href = "/deleteTaken" name = "LinkToDeleteTaken">Delete Courses</a>
+
+<br>
+<a href = "/logout" name = "LinkToLogOut">Logout</a>

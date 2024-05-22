@@ -1,0 +1,15 @@
+<h1>Delete Courses Taken </h1>
+
+<ul>
+    {{#each coursesTaken}}
+        <li>{{this}}</li>
+    {{/each}}
+</ul>
+
+<form method="POST" action = "/deleteTaken">
+    <input type = "text" name= "deleteCourse" id="deleteCourseInput" placeholder="Enter course to be deleted...">
+    <input type = "submit" value = "Enter" id= "submitButton1">
+</form>
+
+<a href = "/my-tracker" name= "LinkToMyTracker">View Tracker</a>
+<a href = "/addTaken" name = "LinkToAddTaken">Add Courses</a>
